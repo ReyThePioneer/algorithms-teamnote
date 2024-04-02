@@ -1,3 +1,3 @@
-int = input()
+int = int(input())
 
 print(-int)
