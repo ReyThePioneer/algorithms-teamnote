@@ -1,4 +1,8 @@
 a, m, d, n = map(int, input().split())
-seq = a * (-m) + d
+array = [0] * n
 
-print(seq)
+array[0] = a
+for i in range(1, n):
+  array[i] = array[i - 1] * m + d
+
+print(array[n - 1])
