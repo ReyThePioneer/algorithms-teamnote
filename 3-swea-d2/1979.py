@@ -2,19 +2,30 @@
 
 T = int(input())
 
-for t in range(T):
+def count(arr) :
+  total = 0
+
+  for lst in arr :
+    cnt = 0
+
+    for i in range(len(lst)) :
+      if lst[i] == 1 :
+        cnt += 1
+
+      else:
+        if cnt == K :
+          total += 1
+
+        cnt = 0
+
+  return total
+
+for t in range(T) :
   N, K = map(int, input().split())
-  arr = []
 
-  for i in range(N):
-    arr[i] = list(map(int, input().split()))
-    sum_arr = []
-    sum = 0
-    print(arr)
+  arr = [list(map(int, input().split())) + [0] for _ in range(N)] + [[0] * (N + 1)]
 
-    for j in range(N):
-      while (arr[i][j] == 1):
-        sum += 1
-    sum_arr.append(sum)
+  arr_t = list(map(list, zip(*arr)))
+  ans = count(arr) + count(arr_t)
 
-  # print(f"#{t + 1} {ans}")
+  print(f"#{t + 1} {ans}")
