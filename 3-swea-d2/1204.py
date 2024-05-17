@@ -3,8 +3,14 @@
 T = int(input())
 
 for tc in range(T):
-  score_arr = list(map(int, input().split()))
-  score_arr.sort()
-  ans = 0
+  _ = int(input())
+  scores = list(map(int, input().split()))
+  freq = [0] * 101
+  mode = 0
 
-  print(f"#{tc + 1} {ans}")
+  for score in scores:
+    freq[score] += 1
+    if freq[score] >= freq[mode]:
+      mode = score
+  
+  print(f"#{tc + 1} {mode}")
