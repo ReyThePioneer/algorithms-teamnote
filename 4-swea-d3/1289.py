@@ -11,6 +11,7 @@ for tc in range(T):
   for i in mem:
     if i == check:
       cnt += 1
+      
       if check == '1':
         check = '0'
       else:
