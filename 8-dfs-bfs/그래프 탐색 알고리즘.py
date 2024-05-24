@@ -48,9 +48,20 @@ print(queue) # 나중에 들어온 원소부터 출력
 # 4. 재귀 함수(Recursive Function)
   # 자기 자신을 다시 호출하는 함수
   # 어느정도 출력하다가 최대 재귀 깊이 초과 메시지가 출력되고 프로그램이 종료됨
-
 def recursive_function():
   print('재귀 함수를 호출합니다.')
   recursive_function()
 
 recursive_function()
+
+  # 재귀 함수를 문제 풀이에서 사용할 때는 재귀 함수의 종료 조건을 반드시 명시
+  # 그렇지 않으면 함수가 무한히 호출될 수 있음
+def recursive_function(i):
+  # 100번째 호출을 했을 때 종료되도록 종료 조건 명시
+  if i == 100:
+    return
+  print(i, '번째 재귀함수에서', i + 1, '번째 재귀함수를 호출합니다.')
+  recursive_function(i + 1)
+  print(i, '번째 재귀함수를 종료합니다.')
+
+recursive_function(1)
