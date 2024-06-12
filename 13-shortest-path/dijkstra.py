@@ -211,7 +211,9 @@ for i in range(1, n + 1):
     # 도달할 수 없는 경우, 무한이라고 출력
     if distance[i] == INF:
         print("INFINITY")
-    
     # 도달할 수 있는 경우 거리를 출력
     else:
         print(distance[i])
+
+# 힙 자료구조를 이용하는 다익스트라 알고리즘의 시간 복잡도는 O(ElogV)
+# 직관적으로 전체 과정은 E개의 원소를 우선순위 큐에 넣었다가 모두 빼내는 연산과 매우 유사함
