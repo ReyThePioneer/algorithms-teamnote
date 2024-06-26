@@ -4,27 +4,20 @@ import sys
 
 # 단어 개수 N 입력받기
 n = int(sys.stdin.readline())
-words = []
-words_len = []
 
-# N개의 단어 입력받기
+# set에 N개의 단어 입력받기
+words = set()
 for _ in range(n):
-    words.append(sys.stdin.readline().replace('\n', ''))
+    words.add(sys.stdin.readline().strip())
 
-# 중복 단어 제거
-words = set(words)
-words = list(words)
-
-# 각 단어 길이 구하기
+# 2차원 list에 [길이, 단어] 입력하기
+len_word = []
 for word in words:
-    words_len.append([word, len(word)])
+    len_word.append([len(word), word])
 
-# 길이가 같은 경우 알파벳 순서대로 정렬하기
-words_len.sort(key=lambda x:x[0])
-
-# 길이가 짧은 순서대로 정렬하기
-words_len.sort(key=lambda x:x[1])
+# 길이가 짧은 순서대로 정렬하기 (길이가 같은 경우 알파벳 순서대로 정렬)
+len_word.sort()
 
 # 정렬된 단어들을 한 줄에 하나씩 출력하기
-for w in words_len:
-    print(w[0])
+for w in len_word:
+    print(w[1])
