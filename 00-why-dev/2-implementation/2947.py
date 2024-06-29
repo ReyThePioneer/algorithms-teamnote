@@ -7,6 +7,7 @@ arr = list(map(int, sys.stdin.readline().split()))
 # 버블 정렬
 # 배열의 개수(5)만큼 반복, 전체 배열 순회 (0~4)
 for i in range(len(arr)):
+    
     # 정렬된 부분 제외 순회 (0~3, 0~2, 0~1, 0)
     for j in range(len(arr) - i - 1):
 
