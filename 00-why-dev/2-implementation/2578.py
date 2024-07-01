@@ -51,16 +51,18 @@ erase_cnt = 0
 three_bingo = False
 
 for row in erase:
+    # 사회자가 부른 숫자가 보드의 어느 위치에 있는지 가져오고 숫자 지우기(1로 표시)
     for num in row:
-        # 사회자가 부른 숫자가 보드의 어느 위치에 있는지 가져오고 숫자 지우기(1로 표시)
         if num in pos:
             x, y = pos[num]
             marked[x][y] = 1
             erase_cnt += 1
+            
             # 3빙고 완성 시
             if check_bingo() >= 3:
                 three_bingo = True
                 print(erase_cnt)
                 break
+                
     if three_bingo:
         break
