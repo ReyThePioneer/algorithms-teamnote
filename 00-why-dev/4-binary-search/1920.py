@@ -5,8 +5,8 @@ import sys
 # N 입력받기
 N = int(sys.stdin.readline())
 
-# N 크기의 A 리스트 입력받기
-A = list(map(int, sys.stdin.readline().split()))
+# N 크기의 A 리스트 입력받고 set으로 바꾸기
+A = set(map(int, sys.stdin.readline().split()))
 
 # M 입력받기
 M = int(sys.stdin.readline())
