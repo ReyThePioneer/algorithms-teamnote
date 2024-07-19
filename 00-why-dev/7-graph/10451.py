@@ -6,7 +6,7 @@ import sys
 def dfs(v):
     visited[v] = 1 # v 노드 방문 처리
     next = permu[v] # 다음 노드 정보 가져오기
-    if visited[next] == 0: # 다음 노드가 있다면 재귀로 이동
+    if visited[next] == 0: # 다음 노드가 미방문이라면 재귀로 이동
         dfs(next)
     return
 
